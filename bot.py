@@ -71,7 +71,7 @@ async def send_callback_keyboard(i, j, callback_query):  # создает кла
     await bot.send_message(callback_query.from_user.id, f'{sign}\nВаш ответ: {ans}'.format(sign, ans), reply_markup=keyboard)
 
 
-@dp.message_handler(commands=['start'], state = None)
+@dp.message_handler(commands=['start'], state = '*')
 async def process_start_command(message: types.Message):
 
     await UserState.user_name.set()
